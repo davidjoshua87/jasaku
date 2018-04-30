@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <div class="container">
+    <% include ../partials/nav-customer-login %>
+      <hr>
+      <% include ../partials/error %>
+        <h2>Login Customer</h2>
+        <div class="jumbotron col-md-4">
+          <form class="form" action="/customer/login" method="POST">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" value="" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" value="" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">login</button>
+              <a href="/" class="btn btn-default">Cancel</a>
+            </div>
+          </form>
+        </div>
+  </div>
+</body>
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</html>

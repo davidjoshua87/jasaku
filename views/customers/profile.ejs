@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <div class="container">
+    <% include ../partials/nav-customer-profile %>
+      <hr>
+      <div class="container pull-left">
+        <div class="row">
+          <h2 class="panel-title">Profile</h2>
+          <div class="jumbotron col-xs-9 col-sm-9 col-md-4 col-lg-12 toppad">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4 class="panel-title"><%= customer.name %></h4>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class=" col-md-12 col-lg-12 ">
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Name:</td>
+                          <td>
+                            <%= customer.name %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email:</td>
+                          <td>
+                            <%= customer.email %>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a href="/customer/profile/edit" class="btn btn-primary">Edit</a>
+                    <a href="/customer/profile/delete" class="btn btn-primary">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>
