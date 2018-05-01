@@ -1,1 +1,1 @@
-# Omzetin Pair Project
+# jasaku
