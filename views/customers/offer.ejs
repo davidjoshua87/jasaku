@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <div class="container">
+    <% include ../partials/title %>
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="/">HOME</a></li>
+    </ul>
+    <hr>
+    <% if (typeof errors !== 'undefined') { %>
+      <% errors.forEach(err =>{ %>
+        <div class="alert alert-danger" role="alert">
+          <%= err.message %>
+        </div>
+        <% }) %>
+          <% } %>
+
+            <h2>Offer Detail</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="well">
+                  <form class="form" action="/customer/service/buy/:id" method="POST">
+
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="customerName">Customer Name</label>
+                          <input type="text" name="customerName" value="" class="form-control" required>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="service">Service</label><br>
+                          <select class="form-control" name="serviceName" autofocus required>
+                            <option value="logo">Logo</option>
+                            <option value="web">Design Web</option>
+                            <option value="poster">Poster</option>
+                            <option value="banner">Banner</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <textarea rows="3" name="description" value="" class="form-control" required></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                          <label for="biddingPrice">Bidding Price</label>
+                          <input type="text" name="biddingPrice" value="" class="form-control" required>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <a href="/customer/profile" class="btn btn-default">Cancel</a>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <footer>
+              <% include ../partials/footer %>
+            </footer>
+</body>
+
+
+</html>

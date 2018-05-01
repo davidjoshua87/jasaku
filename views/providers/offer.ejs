@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <ul class="nav nav-pills">
+    ===
+  </ul>
+  <hr>
+  <div class="container pull-left">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 toppad">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Offer List</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class=" col-md-12 col-lg-12 ">
+                <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                      <td>Name Customer:</td>
+                      <td>
+                        <% customers.name %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Service Name:</td>
+                      <td>
+                        <% provider.service %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>description:</td>
+                      <td>
+                      </td>
+                      <tr>
+                        <td>Bidding Price:</td>
+                        <td>
+                        </td>
+                      </tr>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="/provider/profile" onclick="return alert('Request Sent!')" class="btn btn-primary">Accept</a>
+                <a href="/provider/profile" onclick="return alert('Request Sent!')" class="btn btn-primary">Decline</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

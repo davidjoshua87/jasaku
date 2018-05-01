@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <div class="container">
+    <% include ../partials/header-index-provider-login %>
+      <hr>
+      <% include ../partials/error %>
+        <h2>Edit Provider</h2>
+        <div class="jumbotron col-md-4">
+          <form class="form" action="/provider/profile/edit" method="POST">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" value="<%= provider.name %>" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" value="<%= provider.email %>" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" value="" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="service">Service</label><br>
+                  <select class="form-control" name="service" autofocus required>
+                        <option value="logo">Logo</option>
+                        <option value="web">Design Web</option>
+                        <option value="poster">Poster</option>
+                        <option value="banner">Banner</option>
+                      </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" name="price" value="<%= provider.price %>" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="/provider/profile" class="btn btn-default">Cancel</a>
+            </div>
+          </form>
+        </div>
+  </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+
+</html>

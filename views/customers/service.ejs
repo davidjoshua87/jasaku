@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/title %>
+  <ul class="nav nav-pills">
+    <li role="presentation"><a class="glyphicon glyphicon-home" href="/">HOME</a></li>
+    <li role="presentation"><a class="glyphicon glyphicon-exit" href="/provider/logout">LOGOUT</a></li>
+  </ul>
+  <hr>
+  <div>
+  <form action='/customer/service' method='post'>
+      Search by:
+      <select name='search_type' required>
+         <option value="name">name</option>
+         <option value="service">service</option>
+      </select > Keyword:
+     <input type='text' name='search'autofocus required>
+     <input class="btn btn-primary" type='submit' value='Submit'>
+   </form>
+<h3>Service List</h3>
+</div>
+
+  <div class="container pull-left">
+    <div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-4 col-lg-4 toppad">
+        <% providers.forEach((provider, index) =>{ %>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= providers.name %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+
+                <div class=" col-md-12 col-lg-12 ">
+
+                  <table class="table table-user-information">
+
+                    <tbody>
+                      <tr>
+                        <td>No:</td>
+                        <td>
+                          <%= index + 1 %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Name:</td>
+                        <td>
+                          <%= provider.name %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td>
+                          <%= provider.email %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Service:</td>
+                        <td>
+                          <%= provider.service %>
+                        </td>
+                        <tr>
+                          <td>Price:</td>
+                          <td>
+                            <%= formatCurency(provider.price) %>
+                          </td>
+                        </tr>
+                    </tbody>
+
+
+                  </table>
+
+                  <a href="/customer/service/buy/<%= provider.id %>" class="btn btn-primary">BUY</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+
+    </div>
+  </div>
+<a href="/customer/profile" class="btn btn-primary">&larr; Back to Profile</a>
+</body>
+
+</html>
