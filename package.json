@@ -17,14 +17,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidjoshua87/jasaku.git"
   },
-  "author": "afif,oky",
+  "author": "afif",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/davidjoshua87/jasaku/issues"
