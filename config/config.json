@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "afif",
+    "password": "afif",
+    "database": "jasaku",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "vnzmilsgearqai",
+    "password": "c78eb30380099584e9dfa41f46c849f8c9a0d5ba3bf069736520a1a2ff290ff8",
+    "database": "d1aupaup9ct14d",
+    "host": "ec2-50-16-196-238.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

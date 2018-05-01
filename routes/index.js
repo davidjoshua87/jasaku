@@ -1,7 +1,4 @@
-/*jshint esversion:6*/
-/*jshint -W097*/
-/*jshint -W117*/
-/*jshint -W030*/
+
 
 const authenticationMiddleware = require('../middlewares/authenticationMiddleware.js');
 const router                   = require('express').Router();

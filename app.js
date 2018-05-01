@@ -1,11 +1,8 @@
-/*jshint esversion:6*/
-/*jshint -W097*/
-/*jshint -W117*/
-/*jshint -W030*/
 
+const createError     = require('http-errors');
+const path            = require('path');
 const app             = require('express')();
 const bodyParser      = require('body-parser');
-const port            = 3000;
 const indexRoutes     = require('./routes');
 const providersRoutes = require('./routes/provider');
 const routeCustomer   = require('./routes/customer');
@@ -14,14 +11,13 @@ const session         = require('express-session');
 //helpers
 app.locals.formatCurency = require('./helpers/formatCurency.js');
 
-// Template Engine
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Body Parser
-app.use(bodyParser.urlencoded({
-   extended: false
-}));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
    secret: "express secret key",
@@ -35,4 +31,4 @@ app.use('/provider', providersRoutes);
 app.use('/customer', routeCustomer);
 
 // -----------------------------------------------------------------------------
-app.listen(port, console.log(`Listening on port ${port}`));
+module.exports = app;

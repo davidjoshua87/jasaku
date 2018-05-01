@@ -1,7 +1,3 @@
-/*jshint esversion:6*/
-/*jshint -W097*/
-/*jshint -W117*/
-/*jshint -W030*/
 
 'use strict';
 
